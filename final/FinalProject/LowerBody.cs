@@ -1,6 +1,7 @@
 public class LowerBody : Workout
 {
-    bool _isRequired = true;
+        protected override bool _isRequired{get; set;} = true;
+
 
     private List<string> LowerBodyWorkouts = new List<string>{
 
@@ -31,10 +32,12 @@ public class LowerBody : Workout
 
      public override void displayWorkout()
     {
+        
         foreach(string item in LowerBodyWorkouts)
         {   Console.WriteLine(item);
         
         }
+
 
     }
 }

@@ -1,6 +1,6 @@
 public class UpperBody: Workout
 {
-    bool _isRequired = true;
+    protected override bool _isRequired{get; set;} = true;
     private List<string> UpperBodyWorkouts = new List<string>{
         "Chest Workouts:",
         "Dumbell Raises: 4 sets | 12 reps",

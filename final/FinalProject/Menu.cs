@@ -9,8 +9,10 @@ public class Menu
 
     public void displayMainMenu()
     {
+        // Console.WriteLine("--- Select one of the workouts below: ---\n");
+        Console.WriteLine("---Please select an option to begin---");
         foreach(string item in MainMenu)
-        {
+        {   
             Console.WriteLine(item);
         }
     }

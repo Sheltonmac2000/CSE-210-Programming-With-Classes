@@ -13,10 +13,10 @@ public class BMIcalculator
     public Tuple<double,double> getWeightAndHeight()
     {// In this function I will return a tuple, because I cannot direclty return two values. A tuple allows me to return multiple
         //values at once.
-        Console.WriteLine("What is your weight(in Kg)?");
+        Console.WriteLine("\nWhat is your weight(in Kg)?");
         string weight = Console.ReadLine();
         
-        Console.WriteLine("What is your height(in cm)?");
+        Console.WriteLine("\nWhat is your height(in cm)?");
         string height = Console.ReadLine();
 
          try
@@ -44,27 +44,27 @@ public class BMIcalculator
         double BMI = weightInt / heightIntSquared;
 
         //BMI = weight(kg) / height**2
-        Console.WriteLine($"Your height in m is {heightInt}, that square is {heightIntSquared}");
-        Console.WriteLine($"Your weight in KG is {weightInt}");
-        Console.WriteLine($"Your BMI is: {BMI:F2}");
+        Console.WriteLine($"\nYour height in cm is {heightInt}.\n");
+        Console.WriteLine($"\nYour weight in KG is {weightInt}.\n");
+        Console.WriteLine($"\nYour BMI is: {BMI:F2}\n");
 
         if(BMI < 18.5)
-        {Console.WriteLine("You are underweight. You should should put on some more pounds.");
+        {Console.WriteLine("\nYou are underweight. You should should put on some more pounds.\n");
         
         }
 
         else if(BMI >= 18.5 && BMI <24.9)
-        {Console.WriteLine("You are at the reommended weight level. Keep it that way!");
+        {Console.WriteLine("\nYou are at the reommended weight level. Keep it that way!\n");
         
         }
 
         else if(BMI >= 25 && BMI <29.9)
-        {Console.WriteLine("You are overweight.");
+        {Console.WriteLine("\nYou are overweight.\n");
         
         }
 
         else if(BMI >= 30)
-        {Console.WriteLine("You are obese. You should really lose some weight.");
+        {Console.WriteLine("\nYou are obese. You should really lose some weight.\n");
         
         }
     }

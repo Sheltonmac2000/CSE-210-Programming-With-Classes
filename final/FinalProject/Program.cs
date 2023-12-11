@@ -8,14 +8,15 @@ while(true)
 {
     Menu menu = new Menu();
     menu.displayMainMenu();
-    Console.WriteLine("Please select an option to begin");
+    // Console.WriteLine("Please select an option to begin");
     userInput = Console.ReadLine();
 
-    //Instance of the UpperBody Class
+    //Instance of the different classes
     UpperBody upperBody = new UpperBody("This is the","Upper Body Workout", "The focuse will be on strengthennign your chest, back, shoulders and arms.","You did great!");
     CoreWorkout coreWorkout = new CoreWorkout("This is the","Core Body Workout", "The focuse will be on strengtheinig your core; this inclueds your abs and lower back","You did great!");
     LowerBody lowerBody = new LowerBody("This is the","Lower Body Workout", "The focuse will be on strengthening your legs primarily.","You did great!");
     Calesthenics calesthenics = new Calesthenics("This is the","Calesthenics full body workout", "The focuse will be on strengthennign your all major muscles groups of your body without any equipment.","You did great!");
+    NutritionTracker nutritionTracker = new NutritionTracker();
 
     if(userInput == "1")
     {   Console.WriteLine("--- Select one of the workouts below: ---\n");
@@ -27,9 +28,18 @@ while(true)
         {
             Console.WriteLine("\nUpper Body Workout\n");
             upperBody.showRequiredEquipment();
+            Console.Write("You may begin your workout in:");
+            upperBody.generateCountAnimation();
+            upperBody.displayWarmup();
             upperBody.displayIntroduction();
             upperBody.displayWorkout();
+            Console.WriteLine("Complete as many of these workouts as you can, then press Enter when you finish your workout. Good luck!");
+            Console.ReadLine();
             upperBody.displayEndingMessage();
+            Console.WriteLine("You may now begin the cooldown process. Do these workouts to relax your muscles.");
+            upperBody.displayCoolDown();
+            upperBody.generateLineAnimation();
+            Console.WriteLine("\nYou did great today. Now go and get some rest!\n");
         
         }
 
@@ -37,9 +47,19 @@ while(true)
         {
             Console.WriteLine("\nCore Workout\n");
             coreWorkout.showRequiredEquipment();
+            Console.Write("You may begin your workout in:");
+            coreWorkout.generateCountAnimation();
+            coreWorkout.displayWarmup();
             coreWorkout.displayIntroduction();
             coreWorkout.displayWorkout();
+            Console.WriteLine("Complete as many of these workouts as you can, then press Enter when you finish your workout. Good luck!");
+            Console.ReadLine();
             coreWorkout.displayEndingMessage();
+            Console.WriteLine("You may now begin the cooldown process. Do these workouts to relax your muscles.");
+            coreWorkout.displayCoolDown();
+            coreWorkout.generateLineAnimation();
+            Console.WriteLine("\nYou did great today. Now go and get some rest!\n");
+
         
         }
 
@@ -47,9 +67,18 @@ while(true)
         {
             Console.WriteLine("\n Lower Body Workout\n");
             lowerBody.showRequiredEquipment();
+            Console.Write("You may begin your workout in:");
+            lowerBody.generateCountAnimation();
+            lowerBody.displayWarmup();
             lowerBody.displayIntroduction();
             lowerBody.displayWorkout();
+            Console.WriteLine("Complete as many of these workouts as you can, then press Enter when you finish your workout. Good luck!");
+            Console.ReadLine();
             lowerBody.displayEndingMessage();
+            Console.WriteLine("You may now begin the cooldown process. Do these workouts to relax your muscles.");
+            lowerBody.displayCoolDown();
+            lowerBody.generateLineAnimation();
+            Console.WriteLine("\nYou did great today. Now go and get some rest!\n");
         
         }
 
@@ -59,10 +88,18 @@ while(true)
         {
             Console.WriteLine("\n Calesthenics Workout\n");
             calesthenics.showRequiredEquipment();
+            Console.Write("You may begin your workout in:");
+            calesthenics.generateCountAnimation();
+            calesthenics.displayWarmup();
             calesthenics.displayIntroduction();
             calesthenics.displayWorkout();
+            Console.WriteLine("Complete as many of these workouts as you can, then press Enter when you finish your workout. Good luck!");
+            Console.ReadLine();
             calesthenics.displayEndingMessage();
-        
+            Console.WriteLine("You may now begin the cooldown process. Do these workouts to relax your muscles.");
+            calesthenics.displayCoolDown();
+            calesthenics.generateLineAnimation();
+            Console.WriteLine("\nYou did great today. Now go and get some rest!\n");
         }
 
         else if(userWorkout == "5")
@@ -82,7 +119,7 @@ while(true)
 
     else if(userInput == "2")
     {
-        Console.WriteLine("BMI Calculator:");
+        Console.WriteLine("---BMI Calculator:---");
         BMIcalculator calculator = new BMIcalculator();
         calculator.getWeightAndHeight();
         calculator.getBMI();
@@ -92,6 +129,8 @@ while(true)
     else if(userInput == "3")
     {
         Console.WriteLine("Nutrition Tracker");
+        nutritionTracker.trackNutrition();
+
     }
 
     else if(userInput == "4")

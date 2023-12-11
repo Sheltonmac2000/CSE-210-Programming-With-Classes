@@ -1,6 +1,7 @@
 public class CoreWorkout : Workout
 {
-    bool _isRequired = false;
+    // new bool _isRequired = false;
+    protected override bool _isRequired{get; set;} = false;
 
     private List<string> CoreWorkouts = new List<string>{
 
@@ -39,6 +40,9 @@ public class CoreWorkout : Workout
         }
 
     }
+
+    
+
 
     
 

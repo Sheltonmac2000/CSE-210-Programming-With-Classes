@@ -7,7 +7,17 @@ public class Workout
 
     protected string _nameOfActivity;
 
-    protected bool _isRequired;
+    protected virtual bool _isRequired
+    {get;set;}
+
+    // protected virtual bool isRequired
+    // {
+    //     get{return _isRequired;}
+    //     set{ _isRequired = value;}
+    // }
+   
+    
+
 
     protected List<string> requiredEquipment = new List<string>{
     "\n-----------------------------------",
@@ -22,9 +32,9 @@ public class Workout
     protected List<string> Workouts = new List<string>{};
 
 
-    protected  List<string> Warmups = new List<string>{"1. Jumping Jacks --- 30 seconds", "2. Neck Circles --- 30 seconds", "3. Shoulder Rolls --- 30 seconds.", "4. Lunges --- 30 seconds"};
+    protected  List<string> Warmups = new List<string>{"\n1. Jumping Jacks --- 30 seconds", "2. Neck Circles --- 30 seconds", "3. Shoulder Rolls --- 30 seconds.", "4. Lunges --- 30 seconds\n"};
 
-    protected List<string> Cooldowns = new List<string>{"1. Single leg stance --- 30 seconds.", "2. Neck Stretching --- 30 seconds", "3. Arm Strech --- 30 seconds", "4. Cat-Cow Strech --- 30 seconds", "Butterly Stretch"};
+    protected List<string> Cooldowns = new List<string>{"\n1. Single leg stance --- 30 seconds.", "2. Neck Stretching --- 30 seconds", "3. Arm Strech --- 30 seconds", "4. Cat-Cow Strech --- 30 seconds", "Butterly Stretch\n"};
 
     public Workout(string introMessage, string nameOfActivity, string description, string endingMessage)
     {
@@ -47,7 +57,7 @@ public class Workout
 
     public void showRequiredEquipment()
     {
-        if( _isRequired = true)
+        if( _isRequired == true)
         {
             Console.WriteLine("This Exercise will require some equpment.");
 
@@ -59,7 +69,7 @@ public class Workout
             }
         }
 
-        else if(_isRequired = false)
+        else if(_isRequired == false)
         {
             Console.WriteLine("You will not require any equipment for this exercise.");
         }
@@ -76,4 +86,69 @@ public class Workout
     }
     
 
+    public void displayWarmup()
+    {
+        foreach(string item in Warmups)
+        {
+            Console.WriteLine(item);
+        }
+    }
+
+
+    public void displayCoolDown()
+    {
+        foreach(string item in Cooldowns)
+        {
+            Console.WriteLine(item);
+        }
+    }
+
+// This function will generate my animations with the countdown. It will be overwritten to show the line animations.
+    public virtual void generateCountAnimation()
+    {
+
+    for (int cycleDuration= 9; cycleDuration>0; cycleDuration-- )
+    {
+        Console.Write(cycleDuration);
+        Thread.Sleep(1000);
+        Console.Write($"\b \b");
+
+    }
+    }
+
+    public virtual void generateLineAnimation()
+    {
+
+        List <string> LineAnimations = new List<string>{"|","/","-","\\","|","/","-","\\"};
+
+        // foreach(string i in LineAnimations)
+        // {
+        //     Console.Write(i);
+        //     Thread.Sleep(100);
+        //     Console.Write("\b \b");
+        // }
+
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(30);
+        int i = 0;
+
+        // Console.Write("Get ready...");
+
+        while(DateTime.Now < endTime)
+        {
+            string s = LineAnimations[i];
+            
+            Console.Write(s); 
+            Thread.Sleep(100);
+            Console.Write("\b \b");
+
+            i++;
+
+            if(i >= LineAnimations.Count)
+            {
+                i = 0;
+            }
+        }
+
+    }
 }

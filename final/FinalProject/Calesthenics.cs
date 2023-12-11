@@ -1,6 +1,7 @@
 public class Calesthenics : Workout
 {
-    bool _isRequired = false;
+    // new bool _isRequired = false;
+    protected override bool _isRequired{get; set;} = false;
 
     private List<string> CalesthenicsWorkouts = new List<string>{
 
@@ -31,6 +32,8 @@ public class Calesthenics : Workout
 
     public override void displayWorkout()
     {
+
+        
         foreach(string item in CalesthenicsWorkouts)
         {   Console.WriteLine(item);
         
